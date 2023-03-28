@@ -28,3 +28,12 @@ const ingredients = [
   "Herbs",
   "Condiments",
 ];
+
+const ul = document.getElementById("ingredients");
+
+ingredients.forEach((ingredients) => {
+  const li = document.createElement("li");
+  li.textContent = ingredients;
+  li.classList.add("item");
+  ul.appendChild(li);
+});
