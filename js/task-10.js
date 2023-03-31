@@ -18,28 +18,36 @@ function getRandomHexColor() {
     .toString(16)
     .padStart(6, 0)}`;
 }
-
+// Створює діви
 function createBoxes(amount) {
   let size = 30;
   for (let i = 0; i < amount; i++) {
-    const div = document.createElement("div");
-    div.style.width = `${size}px`;
-    div.style.height = `${size}px`;
-    div.style.backgroundColor = getRandomHexColor();
-    boxes.appendChild(div);
+    const divElement = document.createElement("div");
+    divElement.style.width = `${size}px`;
+    divElement.style.height = `${size}px`;
+    divElement.style.backgroundColor = getRandomHexColor();
+    boxes.appendChild(divElement);
     size += 10;
   }
 }
 
+// Очищення вмісту, видаляє всі елементи
 function destroyBoxes() {
   boxes.innerHTML = "";
 }
 
-createBtn.addEventListener("click", () => {
+// Для створення контейнеру
+const firstCallback = () => {
   const amount = Number(input.value);
   createBoxes(amount);
-});
+};
 
-destroyBtn.addEventListener("click", () => {
+// Для видлаення контейнеру
+const secondCallback = () => {
   destroyBoxes();
-});
+};
+
+// Колбек створення
+createBtn.addEventListener("click", firstCallback);
+// Колбек видалення
+destroyBtn.addEventListener("click", secondCallback);
