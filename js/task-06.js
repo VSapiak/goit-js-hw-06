@@ -6,10 +6,12 @@
 // Для додавання стилів використовуй CSS-класи valid і invalid, які ми вже додали у вихідні файли завдання.
 
 const input = document.getElementById("validation-input");
-const validLength = 6;
 
 const firstCallback = () => {
-  if (validLength === input.value.length) {
+  const validLength = input.value.length;
+  const dataLength = Number(input.dataset.length);
+
+  if (validLength === dataLength) {
     input.classList.add("valid");
     input.classList.remove("invalid");
   } else {

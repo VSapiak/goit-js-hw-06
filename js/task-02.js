@@ -29,11 +29,19 @@ const ingredients = [
   "Condiments",
 ];
 
+// const liElements = ingredients.map((ingredient) => {
+//   const li = document.createElement("li");
+//   li.textContent = ingredient;
+//   li.classList.add("item");
+//   return li;
+// });
+
+// const ul = document.getElementById("ingredients");
+// ul.append(...liElements);
+
+// Бачу зараз ще два таких метода.
 const ul = document.getElementById("ingredients");
 
-ingredients.forEach((ingredients) => {
-  const li = document.createElement("li");
-  li.textContent = ingredients;
-  li.classList.add("item");
-  ul.append(li);
-});
+ul.innerHTML = ingredients
+  .map((ingredient) => `<li class="item">${ingredient}</li>`)
+  .join("");
