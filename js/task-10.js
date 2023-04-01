@@ -51,3 +51,53 @@ const secondCallback = () => {
 createBtn.addEventListener("click", firstCallback);
 // Колбек видалення
 destroyBtn.addEventListener("click", secondCallback);
+
+// 2 варіант
+
+// const input = document.querySelector("input");
+// const createBtn = document.querySelector("[data-create]");
+// const destroyBtn = document.querySelector("[data-destroy]");
+// const boxes = document.querySelector("#boxes");
+
+// function getRandomHexColor() {
+//   return `#${Math.floor(Math.random() * 16777215)
+//     .toString(16)
+//     .padStart(6, 0)}`;
+// }
+
+// let size = 30;
+// const scale = 1.1;
+// // Створює діви
+// function createBoxes(amount) {
+//   // let size = 30;
+//   // const scale = 1.1;
+//   for (let i = 0; i < amount; i++) {
+//     const divElement = document.createElement("div");
+//     divElement.style.width = `${size}px`;
+//     divElement.style.height = `${size}px`;
+//     divElement.style.backgroundColor = getRandomHexColor();
+//     boxes.append(divElement);
+//     size *= scale;
+//   }
+// }
+
+// // Очищення вмісту, видаляє всі елементи
+// function destroyBoxes() {
+//   boxes.innerHTML = "";
+// }
+
+// // Для створення контейнеру
+// const firstCallback = () => {
+//   const amount = Number(input.value);
+//   createBoxes(amount);
+// };
+
+// // Для видлаення контейнеру
+// const secondCallback = () => {
+//   destroyBoxes();
+// };
+
+// // Колбек створення
+// createBtn.addEventListener("click", firstCallback);
+// // Колбек видалення
+// destroyBtn.addEventListener("click", secondCallback);
